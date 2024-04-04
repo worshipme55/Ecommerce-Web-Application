@@ -1,0 +1,17 @@
+version: '3'
+services:
+  ecommerce:
+    image: ecommerce
+    container_name: ecommerce
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always 
+    ports:
+     - 4040:80
+    networks:
+     - ecommerce_network
+
+networks:
+  ecommerce_network:
+    external: true
